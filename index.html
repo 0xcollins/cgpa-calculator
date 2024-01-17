@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>GPA Calculator</title>
+    
+  </head>
+  <body>
+    <div id="calculator">
+      <h2>GPA Calculator</h2>
+
+      <div style="overflow-x: auto">
+        <table id="courseTable">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Credit Unit</th>
+              <th>Exam Score</th>
+              <th>Grade Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Initial row for the first course -->
+            <tr>
+              <td><input type="text" placeholder="Course 1" /></td>
+              <td><input type="number" placeholder="Credit Unit" /></td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Score"
+                  oninput="updateGradePoint(this)"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Automatically Calculated"
+                  readonly
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button onclick="addCourseRow()">Add Course</button>
+      <button onclick="calculateGPA()">Calculate GPA</button>
+
+      <div id="result"></div>
+      <div id="typingText">
+        0xcollins is typing..........great result you have there
+      </div>
+      <div id="degreeRank"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
